@@ -65,7 +65,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit
 /* ═══════════════════════════════════════════════════════════════
    NAVBAR
 ═══════════════════════════════════════════════════════════════ */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s}
+.nav-avito-bar{background:#1e40af;padding:.28rem 1.5rem;display:flex;align-items:center;justify-content:flex-end;gap:1.2rem}.nav-avito-bar a{color:rgba(255,255,255,.92);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s}.nav-avito-bar a:hover{color:#fff}.nav-avito-bar .avito-stars{display:flex;align-items:center;gap:.18rem;font-size:.75rem;color:#fbbf24;letter-spacing:0}.nav-avito-bar .avito-rating{font-size:.68rem;font-weight:700;color:#fff;margin-left:.1rem}.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.5rem;max-width:1200px;margin:0 auto}
 .nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:var(--shadow-sm)}
 .nav-brand{font-family:var(--font-head);font-weight:900;font-size:1.2rem;color:var(--primary);letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
@@ -86,7 +86,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit
 /* ═══════════════════════════════════════════════════════════════
    HERO
 ═══════════════════════════════════════════════════════════════ */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:80px;overflow:hidden;position:relative}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:110px;overflow:hidden;position:relative}
 .hero-content{padding:4rem 2rem 4rem 0;padding-left:max(2rem,calc((100vw - 1200px)/2 + 1.5rem));animation:fadeInLeft .9s ease forwards}
 .hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
 .hero-eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--primary)}
@@ -311,6 +311,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit
 
 <!-- ══════════════════════ NAVBAR ══════════════════════ -->
 <nav class="nav" id="mainNav" data-testid="navbar">
+  <div class="nav-avito-bar">
+    <span class="avito-stars">★★★★★</span><span class="avito-rating">5.0</span>
+    <a href="https://www.avito.ru/kaliningrad/predlozheniya_uslug/gruzoperevozki_pereezdy" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Мы на Авито — отзывы и рейтинг
+    </a>
+  </div>
   <div class="nav-inner">
     <a href="#" class="nav-brand" data-testid="nav-logo">
       СЕРГЕЙ <span>Грузоперевозки</span>
@@ -326,6 +333,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit
     <button class="hamburger" id="hamburger" aria-label="Меню" data-testid="hamburger-btn">
       <span></span><span></span><span></span>
     </button>
+  </div>
   </div>
 </nav>
 
