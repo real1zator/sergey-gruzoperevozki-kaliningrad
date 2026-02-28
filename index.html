@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сергей — Грузоперевозки и переезды в Калининграде</title>
+<meta name="description" content="Грузоперевозки и переезды в Калининграде. Renault Master, 2 грузчика, 70 ₽/км. Частник без посредников. Звоните!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   RESET & VARIABLES
+═══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{border:none;cursor:pointer;font-family:inherit}
+ul{list-style:none}
+:root{
+  --bg:#ffffff;
+  --surface:#f8fafc;
+  --surface2:#f1f5f9;
+  --primary:#1e40af;
+  --primary-dark:#1e3a8a;
+  --primary-light:#3b82f6;
+  --primary-pale:#eff6ff;
+  --text:#0f172a;
+  --text-muted:#64748b;
+  --border:#e2e8f0;
+  --trust-bg:#0f172a;
+  --success:#10b981;
+  --font-head:'Manrope',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:0 4px 16px rgba(0,0,0,.08);
+  --shadow-xl:0 20px 40px rgba(30,64,175,.12);
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:#1e40af;border-radius:4px}
+
+/* ═══════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════════════════════════ */
+.h1{font-family:var(--font-head);font-weight:900;font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.03em;color:var(--text)}
+.h2{font-family:var(--font-head);font-weight:800;font-size:clamp(1.7rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;color:var(--text)}
+.h3{font-family:var(--font-head);font-weight:700;font-size:1.1rem;color:var(--text)}
+.section-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.25em;color:var(--primary);display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}
+.section-label::before{content:'';display:block;width:2rem;height:2px;background:var(--primary)}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════════════════ */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-body);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;transition:all .25s}
+.btn-primary{background:var(--primary);color:#fff;padding:.9rem 2rem;border-radius:6px;border:2px solid transparent;box-shadow:0 4px 14px rgba(30,64,175,.3)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow-xl)}
+.btn-primary:active{transform:translateY(0)}
+.btn-secondary{background:#fff;color:var(--primary);padding:.85rem 2rem;border-radius:6px;border:2px solid var(--border)}
+.btn-secondary:hover{border-color:var(--primary);background:var(--primary-pale)}
+.btn-outline{background:transparent;color:var(--primary);padding:.6rem 1.2rem;border-radius:4px;border:1.5px solid var(--primary);font-size:.78rem}
+.btn-outline:hover{background:var(--primary);color:#fff}
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════════════════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.5rem;max-width:1200px;margin:0 auto}
+.nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:var(--shadow-sm)}
+.nav-brand{font-family:var(--font-head);font-weight:900;font-size:1.2rem;color:var(--primary);letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
+.nav-brand span{color:var(--text);font-weight:400;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-link{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);transition:color .2s}
+.nav-link:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:#fff;padding:.55rem 1.3rem;border-radius:5px;font-size:.78rem;font-weight:700;letter-spacing:.08em;transition:all .2s;text-transform:uppercase}
+.nav-cta:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.3rem}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:all .3s;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:2rem;padding:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-head);font-weight:700;font-size:1.5rem;color:var(--text);text-transform:uppercase;letter-spacing:.05em}
+.mobile-menu-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;color:var(--text)}
+.mobile-cta-wrap{display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:280px;margin-top:1rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════════ */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:80px;overflow:hidden;position:relative}
+.hero-content{padding:4rem 2rem 4rem 0;padding-left:max(2rem,calc((100vw - 1200px)/2 + 1.5rem));animation:fadeInLeft .9s ease forwards}
+.hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.hero-eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--primary)}
+.hero-eyebrow-text{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--primary)}
+.hero-title{margin-bottom:1.25rem}
+.hero-title em{font-style:normal;color:var(--primary)}
+.hero-desc{color:var(--text-muted);font-size:1.05rem;line-height:1.7;max-width:480px;margin-bottom:2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.hero-stats{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid var(--border)}
+.hero-stat-num{font-family:var(--font-head);font-weight:900;font-size:2rem;color:var(--primary);line-height:1}
+.hero-stat-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-top:.2rem}
+.hero-image{position:relative;height:100vh;overflow:hidden}
+.hero-image img{width:100%;height:100%;object-fit:cover;transition:transform .1s linear}
+.hero-image-overlay{position:absolute;inset:0;background:linear-gradient(to right,#fff 0%,transparent 30%),linear-gradient(to top,rgba(255,255,255,.4) 0%,transparent 40%)}
+.hero-badge{position:absolute;bottom:2rem;left:2rem;background:#fff;border-radius:10px;padding:1rem 1.25rem;box-shadow:var(--shadow-md);border:1px solid var(--border);display:flex;align-items:center;gap:.75rem;animation:fadeInUp .8s .5s ease both}
+.hero-badge-icon{width:36px;height:36px;border-radius:8px;background:var(--primary-pale);display:flex;align-items:center;justify-content:center;color:var(--primary)}
+.hero-badge-text{font-size:.75rem;font-weight:600;color:var(--text)}
+.hero-badge-sub{font-size:.65rem;color:var(--text-muted);margin-top:.1rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   TRUST STRIP
+═══════════════════════════════════════════════════════════════ */
+.trust{background:var(--trust-bg);padding:1.75rem 0;overflow:hidden}
+.trust-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 3rem}
+.trust-item{display:flex;align-items:center;gap:.6rem}
+.trust-item-dot{width:5px;height:5px;border-radius:50%;background:var(--primary-light)}
+.trust-item-text{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:#94a3b8}
+.trust-item-text b{color:#fff}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION WRAPPER
+═══════════════════════════════════════════════════════════════ */
+.section{padding:5rem 0}
+.section-alt{background:var(--surface)}
+.section-header{margin-bottom:3rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════════════════════ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.service-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:1.75rem;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.service-card:hover{box-shadow:var(--shadow-xl);border-color:var(--primary);transform:translateY(-4px)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:44px;height:44px;border-radius:10px;background:var(--primary-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;color:var(--primary);transition:background .3s}
+.service-card:hover .service-icon{background:var(--primary);color:#fff}
+.service-title{font-family:var(--font-head);font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:.4rem}
+.service-price{font-family:var(--font-head);font-weight:900;font-size:1.35rem;color:var(--primary);margin-bottom:.6rem}
+.service-desc{font-size:.85rem;color:var(--text-muted);line-height:1.6;flex-grow:1;margin-bottom:1.25rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   VEHICLE SPECS
+═══════════════════════════════════════════════════════════════ */
+.vehicle-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.vehicle-image{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-xl);position:relative}
+.vehicle-image img{width:100%;height:320px;object-fit:cover;transition:transform .6s}
+.vehicle-image:hover img{transform:scale(1.04)}
+.vehicle-label{position:absolute;top:1rem;left:1rem;background:var(--primary);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .75rem;border-radius:4px}
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.spec-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;display:flex;flex-direction:column;gap:.25rem;transition:border-color .2s}
+.spec-item:hover{border-color:var(--primary)}
+.spec-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);font-weight:600}
+.spec-value{font-family:var(--font-head);font-weight:800;font-size:1.1rem;color:var(--primary)}
+.spec-value span{font-size:.75rem;color:var(--text-muted);font-weight:400}
+.cargo-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.5rem}
+.cargo-tag{background:var(--primary-pale);color:var(--primary);font-size:.72rem;font-weight:600;padding:.3rem .7rem;border-radius:20px}
+
+/* ═══════════════════════════════════════════════════════════════
+   PORTFOLIO
+═══════════════════════════════════════════════════════════════ */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.portfolio-card{border-radius:10px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer}
+.portfolio-card:first-child{grid-column:span 2;aspect-ratio:16/9}
+.portfolio-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.portfolio-card:hover img{transform:scale(1.06)}
+.portfolio-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,64,175,.85) 0%,transparent 60%);opacity:0;transition:opacity .35s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem}
+.portfolio-card:hover .portfolio-overlay{opacity:1}
+.portfolio-title{font-family:var(--font-head);font-weight:700;font-size:.95rem;color:#fff;margin-bottom:.2rem}
+.portfolio-desc{font-size:.78rem;color:rgba(255,255,255,.75)}
+
+/* ═══════════════════════════════════════════════════════════════
+   WHY US
+═══════════════════════════════════════════════════════════════ */
+.why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.why-features{display:grid;gap:1rem}
+.why-feature{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem;border-radius:10px;border:1.5px solid var(--border);background:#fff;transition:all .3s}
+.why-feature:hover{border-color:var(--primary);background:var(--primary-pale);box-shadow:var(--shadow-md)}
+.why-feature-icon{width:40px;height:40px;min-width:40px;border-radius:9px;background:var(--primary-pale);display:flex;align-items:center;justify-content:center;color:var(--primary);transition:all .3s}
+.why-feature:hover .why-feature-icon{background:var(--primary);color:#fff}
+.why-feature-title{font-family:var(--font-head);font-weight:700;font-size:.92rem;color:var(--text);margin-bottom:.3rem}
+.why-feature-desc{font-size:.83rem;color:var(--text-muted);line-height:1.6}
+.why-info{position:sticky;top:6rem}
+.why-cta-card{background:var(--primary);border-radius:14px;padding:2.5rem;color:#fff}
+.why-cta-title{font-family:var(--font-head);font-weight:900;font-size:1.6rem;margin-bottom:.75rem;line-height:1.2}
+.why-cta-desc{font-size:.9rem;opacity:.85;line-height:1.6;margin-bottom:1.75rem}
+.why-cta-btn{background:#fff;color:var(--primary);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;padding:.85rem 1.75rem;border-radius:6px;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;border:none;cursor:pointer}
+.why-cta-btn:hover{background:var(--primary-pale);transform:translateY(-1px)}
+.included-list{margin-top:1.75rem;display:flex;flex-direction:column;gap:.6rem}
+.included-item{display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:rgba(255,255,255,.9)}
+.included-dot{width:6px;height:6px;min-width:6px;border-radius:50%;background:rgba(255,255,255,.5)}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════════════════════ */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
+.contact-info-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-top:2rem}
+.contact-info-item{display:flex;align-items:flex-start;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--border)}
+.contact-info-item:last-child{border-bottom:none}
+.contact-info-icon{width:36px;height:36px;min-width:36px;border-radius:8px;background:var(--primary-pale);display:flex;align-items:center;justify-content:center;color:var(--primary);margin-top:.1rem}
+.contact-info-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);font-weight:600;margin-bottom:.2rem}
+.contact-info-value{font-family:var(--font-head);font-weight:700;font-size:.95rem;color:var(--text)}
+.contact-form-wrap{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2.5rem;box-shadow:var(--shadow-md)}
+.form-title{font-family:var(--font-head);font-weight:900;font-size:1.4rem;color:var(--text);margin-bottom:.5rem}
+.form-subtitle{font-size:.85rem;color:var(--text-muted);margin-bottom:2rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:.5rem}
+.form-input{width:100%;padding:.8rem 1rem;border:1.5px solid var(--border);border-radius:7px;font-family:var(--font-body);font-size:.9rem;color:var(--text);background:#fff;transition:border-color .2s,box-shadow .2s;outline:none}
+.form-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(30,64,175,.1)}
+.form-input::placeholder{color:#cbd5e1}
+.form-input option{background:#fff;color:var(--text)}
+.form-submit{width:100%;background:var(--primary);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;padding:1rem;border-radius:7px;border:none;cursor:pointer;transition:all .25s;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.form-submit:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,64,175,.3)}
+.form-submit:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.form-note{text-align:center;font-size:.75rem;color:var(--text-muted);margin-top:.75rem}
+.form-success{text-align:center;padding:3rem 1rem}
+.form-success-icon{width:64px;height:64px;border-radius:50%;background:rgba(16,185,129,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;color:var(--success)}
+.form-success-title{font-family:var(--font-head);font-weight:800;font-size:1.25rem;color:var(--text);margin-bottom:.5rem}
+.form-success-desc{font-size:.9rem;color:var(--text-muted)}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════ */
+.footer{background:var(--trust-bg);color:#94a3b8;padding:3rem 0 2rem}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:2rem}
+.footer-brand{font-family:var(--font-head);font-weight:900;font-size:1.4rem;color:#fff;letter-spacing:-.02em}
+.footer-brand span{color:var(--primary-light)}
+.footer-sub{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;color:#64748b}
+.footer-phone{font-family:var(--font-head);font-weight:800;font-size:1.4rem;color:#fff;transition:color .2s}
+.footer-phone:hover{color:var(--primary-light)}
+.footer-right{text-align:right}
+.footer-copy{font-size:.72rem;color:#475569;margin-top:.4rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   FLOATING BUTTONS
+═══════════════════════════════════════════════════════════════ */
+.float-desktop{position:fixed;right:1.5rem;bottom:5rem;z-index:90;display:flex;flex-direction:column;gap:.6rem}
+.float-btn{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;border-radius:8px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:all .25s;box-shadow:var(--shadow-md)}
+.float-call{background:var(--primary);color:#fff}
+.float-call:hover{background:var(--primary-dark);transform:translateX(-3px);box-shadow:var(--shadow-xl)}
+.float-request{background:#fff;color:var(--primary);border:1.5px solid var(--primary)}
+.float-request:hover{background:var(--primary-pale);transform:translateX(-3px)}
+.float-mobile{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;grid-template-columns:1fr 1fr;gap:.5rem;padding:.75rem;background:#fff;border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+.float-mobile-btn{padding:1rem;border-radius:8px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;justify-content:center;gap:.5rem;border:none;cursor:pointer;transition:all .2s;font-family:var(--font-body)}
+.float-mobile-call{background:var(--primary);color:#fff}
+.float-mobile-call:active{background:var(--primary-dark)}
+.float-mobile-request{background:var(--primary-pale);color:var(--primary)}
+.float-mobile-request:active{background:#dbeafe}
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════════════════ */
+.modal-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-backdrop.open{display:flex}
+.modal-box{background:#fff;border-radius:16px;padding:2.5rem;width:100%;max-width:460px;position:relative;box-shadow:0 30px 60px rgba(0,0,0,.2);animation:scaleIn .25s ease}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;background:var(--surface);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text-muted);transition:all .2s}
+.modal-close:hover{background:var(--primary-pale);color:var(--primary)}
+.modal-title{font-family:var(--font-head);font-weight:900;font-size:1.4rem;color:var(--text);margin-bottom:.35rem}
+.modal-subtitle{font-size:.85rem;color:var(--text-muted);margin-bottom:1.75rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════════════════ */
+.toast-container{position:fixed;top:1.5rem;right:1.5rem;z-index:300;display:flex;flex-direction:column;gap:.5rem}
+.toast{background:#fff;border:1px solid var(--border);border-radius:10px;padding:.9rem 1.25rem;font-size:.85rem;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:.75rem;min-width:260px;animation:slideIn .3s ease;transition:opacity .3s}
+.toast.success{border-left:3px solid var(--success)}
+.toast.error{border-left:3px solid #ef4444}
+.toast.fade-out{opacity:0}
+.toast-icon{font-size:1.1rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════════════════ */
+@keyframes fadeInLeft{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeInRight{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-image{display:none}
+  .hero-content{padding:5rem 1.5rem 3rem;animation:fadeInUp .8s ease forwards}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .vehicle-wrap{grid-template-columns:1fr}
+  .vehicle-image{height:240px}
+  .portfolio-card:first-child{grid-column:span 1;aspect-ratio:4/3}
+  .portfolio-grid{grid-template-columns:1fr 1fr}
+  .why-wrap{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .float-desktop{display:none}
+  .float-mobile{display:grid}
+  body{padding-bottom:80px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .services-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .portfolio-card:first-child{grid-column:span 1}
+  .specs-grid{grid-template-columns:1fr 1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-right{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════ NAVBAR ══════════════════════ -->
+<nav class="nav" id="mainNav" data-testid="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand" data-testid="nav-logo">
+      СЕРГЕЙ <span>Грузоперевозки</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services" class="nav-link" data-testid="nav-services">Услуги</a>
+      <a href="#vehicle" class="nav-link" data-testid="nav-vehicle">Авто</a>
+      <a href="#portfolio" class="nav-link" data-testid="nav-portfolio">Работы</a>
+      <a href="#about" class="nav-link" data-testid="nav-about">О нас</a>
+      <a href="#contact" class="nav-link" data-testid="nav-contact">Контакты</a>
+      <button class="nav-cta" onclick="openModal()" data-testid="nav-request-btn">Заявка</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Меню" data-testid="hamburger-btn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()" data-testid="mobile-menu-close">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#services" onclick="closeMobileMenu()">Услуги</a>
+  <a href="#vehicle" onclick="closeMobileMenu()">Автомобиль</a>
+  <a href="#portfolio" onclick="closeMobileMenu()">Работы</a>
+  <a href="#about" onclick="closeMobileMenu()">О нас</a>
+  <a href="#contact" onclick="closeMobileMenu()">Контакты</a>
+  <div class="mobile-cta-wrap">
+    <a href="tel:+79000000000" class="btn btn-primary" style="justify-content:center" data-testid="mobile-call-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.77 19.79 19.79 0 0 1 1.61 2.2 2 2 0 0 1 3.6.01h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l1.07-.96a2 2 0 0 1 2.11-.45c.908.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +7 (900) 000-00-00
+    </a>
+    <button class="btn btn-secondary" style="justify-content:center" onclick="closeMobileMenu();openModal()">Оставить заявку</button>
+  </div>
+</div>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section class="hero" id="hero" data-testid="hero-section">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span class="hero-eyebrow-text">Калининград · Ленинградский район</span>
+    </div>
+    <h1 class="h1 hero-title" data-testid="hero-heading">
+      Переезд —<br>это <em>просто</em>
+    </h1>
+    <p class="hero-desc">
+      Частник без посредников. Renault Master с 2 грузчиками.
+      Любые грузы — личные вещи, стройматериалы, техника.
+      Цена невысокая, всегда договоримся.
+    </p>
+    <div class="hero-actions">
+      <a href="tel:+79000000000" class="btn btn-primary" data-testid="hero-call-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.77 19.79 19.79 0 0 1 1.61 2.2 2 2 0 0 1 3.6.01h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l1.07-.96a2 2 0 0 1 2.11-.45c.908.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +7 (900) 000-00-00
+      </a>
+      <button class="btn btn-secondary" onclick="openModal()" data-testid="hero-request-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        Оставить заявку
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">70₽</div>
+        <div class="hero-stat-label">за км</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">грузчика</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">1,5т</div>
+        <div class="hero-stat-label">грузоподъём.</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100</div>
+        <div class="hero-stat-label">км радиус</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img
+      src="https://images.unsplash.com/photo-1715645948484-da40dd56bc93?q=85&w=1200&auto=format&fit=crop"
+      alt="Профессиональные грузчики"
+      id="heroBg"
+      data-testid="hero-bg"
+    >
+    <div class="hero-image-overlay"></div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div>
+        <div class="hero-badge-text">Renault Master</div>
+        <div class="hero-badge-sub">4×1.6×2 м · до 1,5 тонны</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TRUST STRIP ══════════════════════ -->
+<div class="trust" data-testid="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><div class="trust-item-dot"></div><span class="trust-item-text"><b>Частник</b> без посредников</span></div>
+      <div class="trust-item"><div class="trust-item-dot"></div><span class="trust-item-text"><b>Фиксированная</b> цена</span></div>
+      <div class="trust-item"><div class="trust-item-dot"></div><span class="trust-item-text">Работа с <b>юрлицами и ИП</b></span></div>
+      <div class="trust-item"><div class="trust-item-dot"></div><span class="trust-item-text"><b>Работа с НДС</b></span></div>
+      <div class="trust-item"><div class="trust-item-dot"></div><span class="trust-item-text">Минимальный заказ <b>2 часа</b></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ SERVICES ══════════════════════ -->
+<section class="section" id="services" data-testid="services-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Услуги</div>
+      <h2 class="h2" data-testid="services-title">Наши услуги и цены</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal" data-testid="service-card-1">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <div class="service-title">Домашний переезд</div>
+        <div class="service-price">от 2 000 ₽</div>
+        <div class="service-desc">Личные вещи, мебель, бытовая техника. Разборка и сборка мебели. Помощь при погрузке/выгрузке.</div>
+        <button class="btn-outline" onclick="openModal()" data-testid="service-order-btn-1">Заказать</button>
+      </div>
+
+      <div class="service-card reveal" data-testid="service-card-2">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="service-title">Офисный переезд</div>
+        <div class="service-price">от 3 500 ₽</div>
+        <div class="service-desc">Оргтехника, мебель, документы. Работа с юридическими лицами и ИП. Работаем с НДС.</div>
+        <button class="btn-outline" onclick="openModal()" data-testid="service-order-btn-2">Заказать</button>
+      </div>
+
+      <div class="service-card reveal" data-testid="service-card-3">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+        </div>
+        <div class="service-title">Стройматериалы</div>
+        <div class="service-price">70 ₽/км</div>
+        <div class="service-desc">Кирпич, плитка, доски, сыпучие грузы. Доставка по городу и области до 100 км.</div>
+        <button class="btn-outline" onclick="openModal()" data-testid="service-order-btn-3">Заказать</button>
+      </div>
+
+      <div class="service-card reveal" data-testid="service-card-4">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="service-title">Техника и оборудование</div>
+        <div class="service-price">от 1 500 ₽</div>
+        <div class="service-desc">Бытовая и промышленная техника. Аккуратная погрузка, фиксация, безопасная доставка.</div>
+        <button class="btn-outline" onclick="openModal()" data-testid="service-order-btn-4">Заказать</button>
+      </div>
+
+      <div class="service-card reveal" data-testid="service-card-5">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="service-title">Услуги 2 грузчиков</div>
+        <div class="service-price">400 ₽/час</div>
+        <div class="service-desc">Каждый грузчик 400 ₽/час. Погрузка, выгрузка, переноска на этаж. Минимальный заказ 2 часа.</div>
+        <button class="btn-outline" onclick="openModal()" data-testid="service-order-btn-5">Заказать</button>
+      </div>
+
+      <div class="service-card reveal" data-testid="service-card-6">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="service-title">Срочные перевозки</div>
+        <div class="service-price">400 ₽/час</div>
+        <div class="service-desc">Без наценки за срочность. Выезжаем по всему Калининграду и области. Всегда договоримся.</div>
+        <button class="btn-outline" onclick="openModal()" data-testid="service-order-btn-6">Заказать</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ VEHICLE ══════════════════════ -->
+<section class="section section-alt" id="vehicle" data-testid="vehicle-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Автомобиль</div>
+      <h2 class="h2">Renault Master — надёжный рабочий инструмент</h2>
+    </div>
+    <div class="vehicle-wrap">
+      <div class="vehicle-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1681514583222-0579e6835666?q=85&w=900&auto=format&fit=crop"
+          alt="Renault Master"
+          data-testid="vehicle-image"
+        >
+        <div class="vehicle-label">Renault Master</div>
+      </div>
+      <div class="reveal">
+        <p style="font-size:.95rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.75rem">
+          Renault Master с жёстким кузовом — идеален для квартирных и офисных переездов.
+          Вместительный кузов 4×1.6×2 м позволяет перевезти всё содержимое типичной квартиры за один рейс.
+        </p>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-label">Длина кузова</div>
+            <div class="spec-value">4 м</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Ширина кузова</div>
+            <div class="spec-value">1.6 м</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Высота кузова</div>
+            <div class="spec-value">2 м</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Грузоподъёмность</div>
+            <div class="spec-value">1,5 <span>тонны</span></div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Стоимость</div>
+            <div class="spec-value">70 ₽<span>/км</span></div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Кузов</div>
+            <div class="spec-value">Жёсткий</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Пасс. места</div>
+            <div class="spec-value">2</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Грузчики</div>
+            <div class="spec-value">2</div>
+          </div>
+        </div>
+        <div class="cargo-tags">
+          <span class="cargo-tag">Личные вещи</span>
+          <span class="cargo-tag">Продукты</span>
+          <span class="cargo-tag">Стройматериалы</span>
+          <span class="cargo-tag">Животные</span>
+          <span class="cargo-tag">Техника</span>
+          <span class="cargo-tag">Сыпучие грузы</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PORTFOLIO ══════════════════════ -->
+<section class="section" id="portfolio" data-testid="portfolio-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Портфолио</div>
+      <h2 class="h2" data-testid="portfolio-title">Примеры наших работ</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal" data-testid="portfolio-card-1">
+        <img src="https://images.unsplash.com/photo-1717341706937-28c014c4c08e?q=85&w=900&auto=format&fit=crop" alt="Переезд">
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Квартирный переезд</div>
+          <div class="portfolio-desc">Загрузка мебели и коробок в Ленинградском районе</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-testid="portfolio-card-2">
+        <img src="https://images.unsplash.com/photo-1758523671087-b256bbbca475?q=85&w=600&auto=format&fit=crop" alt="Переезд с вещами">
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Семейный переезд</div>
+          <div class="portfolio-desc">Аккуратная перевозка личных вещей</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-testid="portfolio-card-3">
+        <img src="https://images.unsplash.com/photo-1758523671035-742127d77c0d?q=85&w=600&auto=format&fit=crop" alt="Переезд в новый дом">
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Переезд в новостройку</div>
+          <div class="portfolio-desc">Быстро и аккуратно с грузчиками</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-testid="portfolio-card-4">
+        <img src="https://images.unsplash.com/photo-1668652164517-c760a97e6fc3?q=85&w=600&auto=format&fit=crop" alt="Доставка по городу">
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Городская доставка</div>
+          <div class="portfolio-desc">По Калининграду и области</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-testid="portfolio-card-5">
+        <img src="https://images.unsplash.com/photo-1736979110904-d9d9efb35cf6?q=85&w=600&auto=format&fit=crop" alt="Упаковка">
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Упаковка хрупких вещей</div>
+          <div class="portfolio-desc">Аккуратно оборачиваем всё ценное</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-testid="portfolio-card-6">
+        <img src="https://images.unsplash.com/photo-1758523670969-dd1b1254062d?q=85&w=600&auto=format&fit=crop" alt="Заезд в квартиру">
+        <div class="portfolio-overlay">
+          <div class="portfolio-title">Занос на этаж</div>
+          <div class="portfolio-desc">Грузчики с опытом работы</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ WHY US ══════════════════════ -->
+<section class="section section-alt" id="about" data-testid="whyus-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Преимущества</div>
+      <h2 class="h2" data-testid="whyus-title">Почему выбирают Сергея</h2>
+    </div>
+    <div class="why-wrap">
+      <div class="why-features">
+        <div class="why-feature reveal" data-testid="feature-card-0">
+          <div class="why-feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="why-feature-title">Частник без посредников</div>
+            <div class="why-feature-desc">Работаете напрямую с Сергеем. Цена ниже — нет наценки агентств. Всегда договоримся.</div>
+          </div>
+        </div>
+        <div class="why-feature reveal" data-testid="feature-card-1">
+          <div class="why-feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <div>
+            <div class="why-feature-title">Минимум 2 часа — без наценки</div>
+            <div class="why-feature-desc">Фиксированная ставка 400 ₽/час. Без наценки за срочность. Честная цена с первого звонка.</div>
+          </div>
+        </div>
+        <div class="why-feature reveal" data-testid="feature-card-2">
+          <div class="why-feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="why-feature-title">Помогу с погрузкой бесплатно</div>
+            <div class="why-feature-desc">Окажу помощь при погрузке и выгрузке. 2 грузчика в команде — всё поднимут на любой этаж.</div>
+          </div>
+        </div>
+        <div class="why-feature reveal" data-testid="feature-card-3">
+          <div class="why-feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="why-feature-title">Весь город и область</div>
+            <div class="why-feature-desc">Выезжаем по всему Калининграду и Калининградской области. Радиус доставки — до 100 км.</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-info">
+        <div class="why-cta-card reveal">
+          <div class="why-cta-title">Я ЧАСТНИК.<br>ВСЕГДА ДОГОВОРИМСЯ.</div>
+          <div class="why-cta-desc">
+            Любые грузоперевозки. Домашний переезд. Перевозки по городу и области.
+            Цена невысокая — звоните, обсудим детали.
+          </div>
+          <button class="why-cta-btn" onclick="openModal()" data-testid="whyus-cta-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+            Оставить заявку
+          </button>
+          <div class="included-list">
+            <div class="included-item"><div class="included-dot"></div>Помощь при погрузке и выгрузке</div>
+            <div class="included-item"><div class="included-dot"></div>2 пассажирских места в кабине</div>
+            <div class="included-item"><div class="included-dot"></div>Работа с юрлицами и ИП / НДС</div>
+            <div class="included-item"><div class="included-dot"></div>Перевозка животных</div>
+            <div class="included-item"><div class="included-dot"></div>Наценки за срочность — нет</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<section class="section" id="contact" data-testid="contact-section">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="reveal">
+        <div class="section-label">Связаться</div>
+        <h2 class="h2" style="margin-bottom:1rem" data-testid="contact-title">Оставьте заявку</h2>
+        <p style="font-size:.95rem;color:var(--text-muted);line-height:1.7;margin-bottom:1rem">
+          Опишите вашу задачу — Сергей перезвонит в течение 15 минут и назовёт точную цену.
+        </p>
+        <div class="contact-info-card">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.77 19.79 19.79 0 0 1 1.61 2.2 2 2 0 0 1 3.6.01h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l1.07-.96a2 2 0 0 1 2.11-.45c.908.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Телефон</div>
+              <a href="tel:+79000000000" class="contact-info-value" data-testid="contact-phone">+7 (900) 000-00-00</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Локация</div>
+              <div class="contact-info-value">Калининград, Ленинградский р-н</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Режим работы</div>
+              <div class="contact-info-value">Ежедневно, без выходных</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Радиус выезда</div>
+              <div class="contact-info-value">До 100 км от Калининграда</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem">
+          <span style="background:var(--primary-pale);color:var(--primary);font-size:.72rem;font-weight:700;padding:.35rem .75rem;border-radius:20px;text-transform:uppercase;letter-spacing:.08em">ЛИЦЕНЗИРОВАНО</span>
+          <span style="background:var(--primary-pale);color:var(--primary);font-size:.72rem;font-weight:700;padding:.35rem .75rem;border-radius:20px;text-transform:uppercase;letter-spacing:.08em">РАБОТА С НДС</span>
+          <span style="background:var(--primary-pale);color:var(--primary);font-size:.72rem;font-weight:700;padding:.35rem .75rem;border-radius:20px;text-transform:uppercase;letter-spacing:.08em">ЧАСТНИК</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-form-wrap" id="formWrap">
+          <div id="formContent">
+            <div class="form-title">Оставить заявку</div>
+            <div class="form-subtitle">Заполните форму — перезвоним в течение 15 минут</div>
+            <form id="contactForm" data-testid="contact-form">
+              <div class="form-group">
+                <label class="form-label">Ваше имя *</label>
+                <input type="text" class="form-input" id="fname" placeholder="Как к вам обращаться?" required data-testid="form-name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Телефон *</label>
+                <input type="tel" class="form-input" id="fphone" placeholder="+7 (___) ___-__-__" required data-testid="form-phone">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Тип услуги *</label>
+                <select class="form-input" id="fservice" required data-testid="form-service">
+                  <option value="">Выберите услугу</option>
+                  <option>Домашний переезд</option>
+                  <option>Офисный переезд</option>
+                  <option>Стройматериалы</option>
+                  <option>Техника и оборудование</option>
+                  <option>Услуги грузчиков</option>
+                  <option>Срочная перевозка</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Желаемая дата</label>
+                <input type="date" class="form-input" id="fdate" data-testid="form-date">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Комментарий</label>
+                <textarea class="form-input" id="fcomment" rows="3" placeholder="Адрес, этаж, объём, особенности" style="resize:vertical" data-testid="form-comment"></textarea>
+              </div>
+              <button type="submit" class="form-submit" id="submitBtn" data-testid="form-submit-btn">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg>
+                Отправить заявку
+              </button>
+              <p class="form-note">* обязательные поля · Ответим в течение 15 минут</p>
+            </form>
+          </div>
+          <div id="formSuccess" class="form-success" style="display:none" data-testid="form-success">
+            <div class="form-success-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            </div>
+            <div class="form-success-title">Заявка принята!</div>
+            <div class="form-success-desc">Спасибо! Сергей свяжется с вами в течение 15 минут.</div>
+            <button onclick="resetForm()" style="margin-top:1.25rem;background:none;border:none;cursor:pointer;color:var(--primary);font-size:.85rem;font-weight:600">Отправить ещё →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer class="footer" data-testid="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">СЕРГЕЙ <span>Грузоперевозки</span></div>
+        <div class="footer-sub">Калининград · Ленинградский район</div>
+      </div>
+      <div style="text-align:center">
+        <a href="tel:+79000000000" class="footer-phone" data-testid="footer-phone">+7 (900) 000-00-00</a>
+        <div style="font-size:.75rem;color:#64748b;margin-top:.3rem">Ежедневно, без выходных</div>
+      </div>
+      <div class="footer-right">
+        <div style="font-size:.8rem;color:#94a3b8">Renault Master · 4×1.6×2 м</div>
+        <div style="font-size:.8rem;color:#94a3b8;margin-top:.2rem">до 1,5 т · 2 грузчика</div>
+        <div class="footer-copy">© 2025 Все права защищены</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════ FLOATING BUTTONS ══════════════════════ -->
+<div class="float-desktop" data-testid="desktop-float-buttons">
+  <a href="tel:+79000000000" class="float-btn float-call" data-testid="desktop-call-btn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.77 19.79 19.79 0 0 1 1.61 2.2 2 2 0 0 1 3.6.01h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l1.07-.96a2 2 0 0 1 2.11-.45c.908.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    ПОЗВОНИТЬ
+  </a>
+  <button class="float-btn float-request" onclick="openModal()" data-testid="desktop-request-btn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+    ЗАЯВКА
+  </button>
+</div>
+<div class="float-mobile" data-testid="mobile-float-buttons">
+  <a href="tel:+79000000000" class="float-mobile-btn float-mobile-call" data-testid="mobile-call-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.77 19.79 19.79 0 0 1 1.61 2.2 2 2 0 0 1 3.6.01h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l1.07-.96a2 2 0 0 1 2.11-.45c.908.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    ПОЗВОНИТЬ
+  </a>
+  <button class="float-mobile-btn float-mobile-request" onclick="openModal()" data-testid="mobile-request-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+    ЗАЯВКА
+  </button>
+</div>
+
+<!-- ══════════════════════ MODAL ══════════════════════ -->
+<div class="modal-backdrop" id="modal" data-testid="contact-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" data-testid="modal-close-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="modalContent">
+      <div class="modal-title">Оставить заявку</div>
+      <div class="modal-subtitle">Перезвоним в течение 15 минут</div>
+      <form id="modalForm" data-testid="modal-form">
+        <div class="form-group">
+          <label class="form-label">Имя *</label>
+          <input type="text" class="form-input" id="mname" placeholder="Ваше имя" required data-testid="modal-form-name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Телефон *</label>
+          <input type="tel" class="form-input" id="mphone" placeholder="+7 (___) ___-__-__" required data-testid="modal-form-phone">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Услуга *</label>
+          <select class="form-input" id="mservice" required data-testid="modal-form-service">
+            <option value="">Выберите услугу</option>
+            <option>Домашний переезд</option>
+            <option>Офисный переезд</option>
+            <option>Стройматериалы</option>
+            <option>Техника и оборудование</option>
+            <option>Услуги грузчиков</option>
+            <option>Срочная перевозка</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Дата</label>
+          <input type="date" class="form-input" id="mdate" data-testid="modal-form-date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Комментарий</label>
+          <textarea class="form-input" id="mcomment" rows="2" placeholder="Адрес, этаж, особенности" style="resize:vertical" data-testid="modal-form-comment"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="modalSubmitBtn" data-testid="modal-form-submit">
+          Отправить заявку
+        </button>
+      </form>
+    </div>
+    <div id="modalSuccess" class="form-success" style="display:none" data-testid="modal-success">
+      <div class="form-success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+      </div>
+      <div class="form-success-title">Заявка принята!</div>
+      <div class="form-success-desc">Свяжемся в течение 15 минут</div>
+      <button onclick="closeModal()" style="margin-top:1.25rem;background:none;border:none;cursor:pointer;color:var(--primary);font-size:.85rem;font-weight:600">Закрыть →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ TOAST CONTAINER ══════════════════════ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// CONFIG - Update this URL when hosting on your own server
+// ═══════════════════════════════════════════════════════════════
+const API_URL = 'https://dmitry-elite-moving.preview.emergentagent.com/api';
+const PHONE   = '+79000000000'; // TODO: Replace with real number
+
+// ═══════════════════════════════════════════════════════════════
+// NAVBAR SCROLL
+// ═══════════════════════════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+}, { passive: true });
+
+// ═══════════════════════════════════════════════════════════════
+// PARALLAX HERO
+// ═══════════════════════════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  const bg = document.getElementById('heroBg');
+  if (bg) bg.style.transform = 'translateY(' + (window.scrollY * 0.25) + 'px)';
+}, { passive: true });
+
+// ═══════════════════════════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════════════════════════
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ═══════════════════════════════════════════════════════════════
+// HAMBURGER
+// ═══════════════════════════════════════════════════════════════
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+});
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════════════════════════════
+function openModal() {
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ═══════════════════════════════════════════════════════════════
+// PHONE MASK
+// ═══════════════════════════════════════════════════════════════
+function formatPhone(val) {
+  const d = val.replace(/\D/g, '').slice(0, 11);
+  if (!d.length) return '';
+  let r = '+7';
+  if (d.length > 1) r += ' (' + d.slice(1, 4);
+  if (d.length >= 4) r += ')';
+  if (d.length > 4) r += ' ' + d.slice(4, 7);
+  if (d.length > 7) r += '-' + d.slice(7, 9);
+  if (d.length > 9) r += '-' + d.slice(9, 11);
+  return r;
+}
+['fphone','mphone'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', function() { this.value = formatPhone(this.value); });
+});
+
+// ═══════════════════════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════════════════════
+function showToast(message, type = 'success') {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  toast.innerHTML = '<span class="toast-icon">' + (type === 'success' ? '✓' : '✕') + '</span>' + message;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.classList.add('fade-out');
+    setTimeout(() => container.removeChild(toast), 300);
+  }, 3500);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FORM SUBMIT (shared logic)
+// ═══════════════════════════════════════════════════════════════
+async function submitFormData(data, btnEl, successEl, contentEl) {
+  btnEl.disabled = true;
+  btnEl.textContent = 'Отправляем...';
+  try {
+    const res = await fetch(API_URL + '/submit-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Server error');
+    showToast('Заявка отправлена! Свяжемся в течение 15 минут.', 'success');
+    if (contentEl) contentEl.style.display = 'none';
+    if (successEl) successEl.style.display = 'block';
+  } catch (err) {
+    showToast('Ошибка при отправке. Позвоните нам напрямую.', 'error');
+    btnEl.disabled = false;
+    btnEl.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg> Отправить заявку';
+  }
+}
+
+// PAGE FORM
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const service = document.getElementById('fservice').value;
+  if (!name || !phone || !service) { showToast('Заполните обязательные поля', 'error'); return; }
+  await submitFormData(
+    { name, phone, service, date: document.getElementById('fdate').value, comment: document.getElementById('fcomment').value },
+    document.getElementById('submitBtn'),
+    document.getElementById('formSuccess'),
+    document.getElementById('formContent')
+  );
+});
+
+function resetForm() {
+  document.getElementById('formSuccess').style.display = 'none';
+  document.getElementById('formContent').style.display = 'block';
+  document.getElementById('contactForm').reset();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = false;
+  btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg> Отправить заявку';
+}
+
+// MODAL FORM
+document.getElementById('modalForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const name = document.getElementById('mname').value.trim();
+  const phone = document.getElementById('mphone').value.trim();
+  const service = document.getElementById('mservice').value;
+  if (!name || !phone || !service) { showToast('Заполните обязательные поля', 'error'); return; }
+  await submitFormData(
+    { name, phone, service, date: document.getElementById('mdate').value, comment: document.getElementById('mcomment').value },
+    document.getElementById('modalSubmitBtn'),
+    document.getElementById('modalSuccess'),
+    document.getElementById('modalContent')
+  );
+});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9d4ae491f9d4e5d9","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"7f7b0fd8732c4326aae4b9d58d5c514a"}' crossorigin="anonymous"></script>
+</body>
+</html>
