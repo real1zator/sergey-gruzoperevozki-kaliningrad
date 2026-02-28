@@ -7,6 +7,16 @@
 <meta name="description" content="Грузоперевозки и переезды в Калининграде. Renault Master, 2 грузчика, 70 ₽/км. Частник без посредников. Звоните!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preconnect + preload картинок -->
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1715645948484-da40dd56bc93?q=85&w=1200&auto=format&fit=crop" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1717341706937-28c014c4c08e?q=85&w=900&auto=format&fit=crop">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1681514583222-0579e6835666?q=85&w=900&auto=format&fit=crop">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1758523671087-b256bbbca475?q=85&w=600&auto=format&fit=crop">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1758523671035-742127d77c0d?q=85&w=600&auto=format&fit=crop">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1668652164517-c760a97e6fc3?q=85&w=600&auto=format&fit=crop">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1736979110904-d9d9efb35cf6?q=85&w=600&auto=format&fit=crop">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1758523670969-dd1b1254062d?q=85&w=600&auto=format&fit=crop">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════════════
@@ -274,8 +284,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit
 @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes scaleIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
 @keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+/* Fallback: если observer не сработал — показываем через 1.2с */
+@keyframes revealFallback{to{opacity:1;transform:translateY(0)}}
+.reveal{animation:revealFallback 0s 1.2s forwards}
 
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
@@ -518,6 +531,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit
         <img
           src="https://images.unsplash.com/photo-1681514583222-0579e6835666?q=85&w=900&auto=format&fit=crop"
           alt="Renault Master"
+          loading="eager"
           data-testid="vehicle-image"
         >
         <div class="vehicle-label">Renault Master</div>
@@ -583,42 +597,42 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit
     </div>
     <div class="portfolio-grid">
       <div class="portfolio-card reveal" data-testid="portfolio-card-1">
-        <img src="https://images.unsplash.com/photo-1717341706937-28c014c4c08e?q=85&w=900&auto=format&fit=crop" alt="Переезд">
+        <img src="https://images.unsplash.com/photo-1717341706937-28c014c4c08e?q=85&w=900&auto=format&fit=crop" alt="Переезд" loading="eager">
         <div class="portfolio-overlay">
           <div class="portfolio-title">Квартирный переезд</div>
           <div class="portfolio-desc">Загрузка мебели и коробок в Ленинградском районе</div>
         </div>
       </div>
       <div class="portfolio-card reveal" data-testid="portfolio-card-2">
-        <img src="https://images.unsplash.com/photo-1758523671087-b256bbbca475?q=85&w=600&auto=format&fit=crop" alt="Переезд с вещами">
+        <img src="https://images.unsplash.com/photo-1758523671087-b256bbbca475?q=85&w=600&auto=format&fit=crop" alt="Переезд с вещами" loading="eager">
         <div class="portfolio-overlay">
           <div class="portfolio-title">Семейный переезд</div>
           <div class="portfolio-desc">Аккуратная перевозка личных вещей</div>
         </div>
       </div>
       <div class="portfolio-card reveal" data-testid="portfolio-card-3">
-        <img src="https://images.unsplash.com/photo-1758523671035-742127d77c0d?q=85&w=600&auto=format&fit=crop" alt="Переезд в новый дом">
+        <img src="https://images.unsplash.com/photo-1758523671035-742127d77c0d?q=85&w=600&auto=format&fit=crop" alt="Переезд в новый дом" loading="eager">
         <div class="portfolio-overlay">
           <div class="portfolio-title">Переезд в новостройку</div>
           <div class="portfolio-desc">Быстро и аккуратно с грузчиками</div>
         </div>
       </div>
       <div class="portfolio-card reveal" data-testid="portfolio-card-4">
-        <img src="https://images.unsplash.com/photo-1668652164517-c760a97e6fc3?q=85&w=600&auto=format&fit=crop" alt="Доставка по городу">
+        <img src="https://images.unsplash.com/photo-1668652164517-c760a97e6fc3?q=85&w=600&auto=format&fit=crop" alt="Доставка по городу" loading="eager">
         <div class="portfolio-overlay">
           <div class="portfolio-title">Городская доставка</div>
           <div class="portfolio-desc">По Калининграду и области</div>
         </div>
       </div>
       <div class="portfolio-card reveal" data-testid="portfolio-card-5">
-        <img src="https://images.unsplash.com/photo-1736979110904-d9d9efb35cf6?q=85&w=600&auto=format&fit=crop" alt="Упаковка">
+        <img src="https://images.unsplash.com/photo-1736979110904-d9d9efb35cf6?q=85&w=600&auto=format&fit=crop" alt="Упаковка" loading="eager">
         <div class="portfolio-overlay">
           <div class="portfolio-title">Упаковка хрупких вещей</div>
           <div class="portfolio-desc">Аккуратно оборачиваем всё ценное</div>
         </div>
       </div>
       <div class="portfolio-card reveal" data-testid="portfolio-card-6">
-        <img src="https://images.unsplash.com/photo-1758523670969-dd1b1254062d?q=85&w=600&auto=format&fit=crop" alt="Заезд в квартиру">
+        <img src="https://images.unsplash.com/photo-1758523670969-dd1b1254062d?q=85&w=600&auto=format&fit=crop" alt="Заезд в квартиру" loading="eager">
         <div class="portfolio-overlay">
           <div class="portfolio-title">Занос на этаж</div>
           <div class="portfolio-desc">Грузчики с опытом работы</div>
@@ -942,8 +956,10 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.08 });
+}, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// Принудительно показываем всё через 1.5с если observer не сработал
+setTimeout(() => document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible')), 1500);
 
 // ═══════════════════════════════════════════════════════════════
 // HAMBURGER
